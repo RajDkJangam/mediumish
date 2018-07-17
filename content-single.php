@@ -40,7 +40,7 @@
     </div>
 
     <!-- Begin Featured Image -->
-    <img class="featured-image img-fluid" src="<?php bloginfo('template_url'); ?>/img/demopic/10.jpg" alt="">
+    <img class="featured-image img-fluid" style="width: 100%; " src="<?php echo get_the_post_thumbnail_url($postID,'post-thumbnail' ) ?>" alt="<?php the_title(); ?>">
     <!-- End Featured Image -->
 
     <!-- Begin Post Content -->

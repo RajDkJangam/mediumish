@@ -10,7 +10,7 @@
 <div class="card">
     <a href="<?php the_permalink() ?>">
         <?php if (has_post_thumbnail() ) { ?>
-            <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($postID,'post-thumbnail' ) ?>" title="<?php echo the_title()?>" alt="<?php echo the_title()?>">
+            <img class="img-fluid" src="<?php the_post_thumbnail_url() ?>" title="<?php echo the_title()?>" alt="<?php echo the_title()?>">
         <?php } ?>
     </a>
     <div class="card-block">

@@ -31,7 +31,7 @@ $featured = new WP_Query($args);
                     <div class="col-md-5 wrapthumbnail">
                         <?php if (has_post_thumbnail()) : ?>
                             <a href="<?php the_permalink(); ?>">
-                                <div class="thumbnail" style="background-image:url(<?php echo get_the_post_thumbnail_url($postID,'post-thumbnail' ) ?>);">
+                                <div class="thumbnail" style="background-image:url(<?php the_post_thumbnail_url() ?>);">
                                 </div>
                             </a>
                         <?php endif; ?>

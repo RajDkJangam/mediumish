@@ -191,7 +191,7 @@ span.post-name a,span.post-read-more a:hover {
     border:1px solid rgba(0,0,0,0.08);
     margin:.5rem 0 0;
 }
-.mediumnavigation .nav-item,.dropdown-menu {
+.mediumnavigation .nav-item,.dropdown-menu,.mediumnavigation .page_item {
     font-size:0.9rem;
 }
 .mediumnavigation .search-icon {

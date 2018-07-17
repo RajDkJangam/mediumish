@@ -46,6 +46,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="<?php echo get_home_url()?>">Stories <span class="sr-only">(current)</span></a>
                 </li>
+                <?php wp_list_pages( '&title_li=' ); ?>
                 <li class="nav-item">
                     <a class="nav-link" href="post.html">Post</a>
                 </li>

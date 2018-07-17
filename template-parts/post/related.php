@@ -41,7 +41,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <a href="<?php the_permalink(); ?>">
-                                <img class="img-fluid img-thumb" src="<?php echo get_the_post_thumbnail_url($postID,'post-thumbnail' ) ?>" alt="">
+                                <img class="img-fluid img-thumb" src="<?php echo get_the_post_thumbnail_url($postID,'post-thumbnail' ) ?>" alt="<?php the_title() ?>">
                             </a>
                             <div class="card-block">
                                 <h2 class="card-title">
