@@ -25,13 +25,13 @@
         <div class="metafooter">
             <div class="wrapfooter">
                 <span class="meta-footer-thumb">
-                    <a href="<?php echo the_author_posts()?>">
+                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">
                         <img class="author-thumb" src="<?php echo get_avatar_url( get_the_author_meta( 'ID' )); ?>" alt="<?php ucfirst(the_author()) ?>">
                     </a>
                 </span>
                 <span class="author-meta">
                     <span class="post-name">
-                        <a href="<?php echo the_author_posts()?>">
+                        <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">
                             <?php ucfirst(the_author()) ?>
                         </a>
                     </span>

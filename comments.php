@@ -74,7 +74,10 @@ if ( post_password_required() ) {
                             wp_list_comments( array(
                                 'short_ping'  => true,
                                 'avatar_size' => 50,
+                                'per_page' => 10,
+                                'type' => 'all',
                             ) );
+                            echo paginate_comments_links();
                             ?>
                         </ul>
                     </div>
@@ -87,26 +90,12 @@ if ( post_password_required() ) {
     <?php } ?>
 
     <div class="container">
-        <div class="row listrecent listrelated">
-            <!-- begin post -->
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-block">
-                        <div class="metafooter">
-
-                            <?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) { ?>
-                                <p class="no-comments">
-                                    <?php _e( 'Comments are closed.', 'helsinki' ); ?>
-                                </p>
-                            <?php } ?>
-
-                            <?php comment_form(); ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end post -->
-        </div>
+        <?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) { ?>
+            <p class="no-comments">
+                <?php _e( 'Comments are closed.', 'helsinki' ); ?>
+            </p>
+        <?php } ?>
+        <?php comment_form(); ?>
     </div>
 
 </div>

@@ -7,7 +7,7 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,12 +17,29 @@
     <!-- Bootstrap core CSS -->
     <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/bootstrap.min.css" rel="stylesheet">
     <!-- Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/fonts/righteous.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css" rel="stylesheet">
     <?php wp_head();?>
 </head>
+
+<style>
+    .navbar-nav li {
+        /*position: relative;*/
+        display: inline-block;
+        padding: 20px;
+        font-weight: 500;
+    }
+    .navbar-nav li a {
+        color: #666666;
+    }
+
+    .current_page_item li a{
+        color: black;
+    }
+</style>
+
 <body>
 <!-- Begin Nav
 ================================================== -->
@@ -43,24 +60,11 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <!-- Begin Menu -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo get_home_url()?>">Stories <span class="sr-only">(current)</span></a>
-                </li>
                 <?php wp_list_pages( '&title_li=' ); ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="post.html">Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="author.html">Author</a>
-                </li>
             </ul>
             <!-- End Menu -->
-            <!-- Begin Search -->
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
-            </form>
-            <!-- End Search -->
+            <!-- search -->
+            <?php get_search_form() ?>
         </div>
     </div>
 </nav>

@@ -28,11 +28,10 @@
                     'category__in' => $category_ids,
                     'post__not_in' => array($post->ID),
                     'posts_per_page'=> 3,
-                    'caller_get_posts'=>1,
                     'orderby' => 'rand',
                 );
 
-                $relatives = new wp_query( $args );
+                $relatives = new wp_query($args);
 
                 if($relatives->have_posts() ) {?>
 
@@ -41,7 +40,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <a href="<?php the_permalink(); ?>">
-                                <img class="img-fluid img-thumb" src="<?php echo get_the_post_thumbnail_url($postID,'post-thumbnail' ) ?>" alt="<?php the_title() ?>">
+                                <img class="img-fluid img-thumb" src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title() ?>">
                             </a>
                             <div class="card-block">
                                 <h2 class="card-title">
@@ -84,6 +83,7 @@
             }
             ?>
         </div>
+<!--        <hr/>-->
     </div>
 </div>
 <!-- End Related Posts

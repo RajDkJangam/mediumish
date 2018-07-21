@@ -40,7 +40,7 @@
     </div>
 
     <!-- Begin Featured Image -->
-    <img class="featured-image img-fluid" style="width: 100%; " src="<?php echo get_the_post_thumbnail_url($postID,'post-thumbnail' ) ?>" alt="<?php the_title(); ?>">
+    <img class="featured-image img-fluid" style="width: 100%; " src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
     <!-- End Featured Image -->
 
     <!-- Begin Post Content -->
@@ -117,5 +117,5 @@
         </div>
     </div>
 </div>
-
 <!-- End Post -->
+<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/scroll.js"></script>

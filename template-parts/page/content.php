@@ -7,9 +7,6 @@
  */
 ?>
 <section class="featured-posts">
-    <div class="section-title">
-        <h2><span><?php the_title() ?></span></h2>
-    </div>
     <div class="card-columns listfeaturedtag">
         <?php the_content() ?>
     </div>

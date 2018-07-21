@@ -6,17 +6,14 @@
  * Time: 9:39 PM
  */
 
-
-
 $args = array(
-    'posts_per_page' => 5,
-    'meta_key' => 'meta-checkbox',
+    'posts_per_page' => 4,
+    'meta_key' => 'featured-post',
     'meta_value' => 'yes'
 );
 
 $featured = new WP_Query($args);
 ?>
-
 <!-- Begin Featured
 ================================================== -->
 <section class="featured-posts">
@@ -55,14 +52,14 @@ $featured = new WP_Query($args);
 								</span>
                                     <span class="author-meta">
 								<span class="post-name">
-                                    <a href="<?php the_author_posts() ?>">
+                                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">
                                         <?php the_author(); ?>
                                     </a>
                                 </span><br/>
 								<span class="post-date"><?php echo get_the_date('F j, Y'); ?></span>
                                         <span class="dot"></span>
                                         <span class="post-read">
-                                           In <?php the_category(', '); ?>
+                                           In <?php echo helsinki_post_taxonomy(get_the_ID(), 'category'); ?>
                                         </span>
 								</span>
                                     <span class="post-read-more">
